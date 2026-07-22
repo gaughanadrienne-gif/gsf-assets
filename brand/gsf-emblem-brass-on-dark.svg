@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- GSF emblem: brass Maltese cross (dark-background colorway). Source: Golden_State_Firefighter_Brand_Guide_v1.html section 06 -->
+  <g fill="#C08A2D">
+    <polygon points="50,50 33,13 50,30 67,13"/>
+    <polygon points="50,50 33,13 50,30 67,13" transform="rotate(90 50 50)"/>
+    <polygon points="50,50 33,13 50,30 67,13" transform="rotate(180 50 50)"/>
+    <polygon points="50,50 33,13 50,30 67,13" transform="rotate(270 50 50)"/>
+  </g>
+  <circle cx="50" cy="50" r="7.5" fill="#101C33" stroke="#C08A2D" stroke-width="2.5"/>
+</svg>
