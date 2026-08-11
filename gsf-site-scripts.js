@@ -17,6 +17,8 @@
      1. Keep Reading  - related-article cards from the embedded manifest
      2. FAQ polish    - consistent styling for the FAQ block
      3. Callouts      - keyword-routed product / affiliate callout, mid-article
+     4. On this page  - compact TOC after the first paragraph (4+ h2 articles)
+     5. External-link marker - superscript arrow + noopener on other-host links
 
    Smoke-test the DOM selectors on the live site once and adjust if needed.
    Voice rule: no em-dashes, no emojis, no hype in any injected copy.
@@ -589,7 +591,7 @@
   }
   function renderNote(g){
     var d=g.data||{}, warn=(d.variant==='warn');
-    var box=el('aside','margin:2rem 0;padding:1.05rem 1.3rem;background:'+GFX.bg+';border-left:4px solid '+(warn?GFX.accent:GFX.accent2)+';');
+    var box=el('aside','margin:2rem 0;padding:1.05rem 1.3rem;background:'+GFX.bg+';border:1px solid '+GFX.rule+';');
     if(d.title) box.appendChild(el('div','font:700 .66rem/1 '+GFX.head+';letter-spacing:.12em;text-transform:uppercase;color:'+(warn?GFX.accent:GFX.accent2)+';margin-bottom:.4rem;', d.title));
     if(d.body)  box.appendChild(el('div','font:400 .96rem/1.55 '+GFX.body+';color:'+GFX.ink+';', d.body));
     return box;
@@ -690,11 +692,11 @@
       'Keep Reading'));
     var grid = el('div','display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;');
     picks.forEach(function(a){
-      var card = el('a', 'display:block;padding:1rem 1.1rem;background:'+b.bone+';border:1px solid '+b.rule+';border-left:4px solid '+b.brass+';text-decoration:none;color:'+b.char+';transition:border-color .15s;');
+      var card = el('a', 'display:block;padding:1rem 1.1rem;background:'+b.bone+';border:1px solid '+b.rule+';text-decoration:none;color:'+b.char+';transition:border-color .15s;');
       card.href = base + a.s;
-      card.onmouseover = function(){ card.style.borderLeftColor = b.ember; };
-      card.onmouseout  = function(){ card.style.borderLeftColor = b.brass; };
-      card.appendChild(el('div','font:700 .62rem/1 "Saira Condensed","Public Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:'+b.slate+';margin-bottom:.4rem;', a.p));
+      card.onmouseover = function(){ card.style.borderColor = b.brass; };
+      card.onmouseout  = function(){ card.style.borderColor = b.rule; };
+      card.appendChild(el('div','font:700 .62rem/1 "Saira Condensed","Public Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:'+b.brass+';margin-bottom:.4rem;', a.p));
       card.appendChild(el('div','font:600 1.02rem/1.3 "Public Sans",system-ui,sans-serif;color:'+b.navy+';', a.t));
       grid.appendChild(card);
     });
@@ -747,6 +749,107 @@
     else { host.appendChild(box); }
   }
 
+  // ---- 4. On this page (TOC) ---------------------------------------------
+  function headingId(h, idx){
+    if (h.id) return h.id;
+    var base = (h.textContent||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').substring(0,60) || 'section-'+(idx+1);
+    var id = base, n = 2;
+    while (byId(id)) { id = base + '-' + n; n++; }
+    h.id = id;
+    return id;
+  }
+  function toc(host){
+    if (byId('gsf-toc')) return;
+    var all = host.querySelectorAll('h2'), h2s = [], i;
+    for (i=0;i<all.length;i++){
+      var h = all[i];
+      if (h.closest && h.closest('#gsf-keep-reading, #gsf-callout')) continue; // skip injected UI
+      if ((h.textContent||'').trim()) h2s.push(h);
+    }
+    if (h2s.length < 4) return;
+    var firstP = host.querySelector('p');
+    if (!firstP || !firstP.parentNode) return;
+
+    var b = CFG.brand;
+    var box = el('nav','margin:1.75rem 0;padding:1rem 1.2rem;background:'+b.bone+';border:1px solid '+b.rule+';');
+    box.id = 'gsf-toc';
+    box.setAttribute('aria-label','On this page');
+
+    var head = el('div','display:flex;align-items:center;justify-content:space-between;gap:.75rem;');
+    head.appendChild(el('div','font:600 .68rem/1 "IBM Plex Mono",ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:'+b.brass+';','On this page'));
+    var toggle = el('button','background:none;border:1px solid '+b.rule+';color:'+b.navy+';font:600 .64rem/1 "IBM Plex Mono",ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .6rem;cursor:pointer;display:none;');
+    toggle.type = 'button';
+    head.appendChild(toggle);
+    box.appendChild(head);
+
+    var list = el('div','margin-top:.7rem;');
+    h2s.forEach(function(h, idx){
+      var id = headingId(h, idx);
+      var a = el('a','display:block;padding:.28rem 0;font:400 .92rem/1.4 "Public Sans",system-ui,sans-serif;color:'+b.navy+';text-decoration:underline;text-underline-offset:2px;');
+      a.href = '#' + id;
+      a.textContent = (h.textContent||'').trim();
+      a.onclick = function(ev){
+        var target = byId(id), smoothOK = false;
+        try { smoothOK = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: no-preference)').matches); } catch(e){}
+        if (!smoothOK || !target || !target.scrollIntoView) return; // default instant jump
+        ev.preventDefault();
+        target.scrollIntoView({ behavior:'smooth', block:'start' });
+        try { if (history.replaceState) history.replaceState(null, '', '#'+id); } catch(e){}
+      };
+      list.appendChild(a);
+    });
+    box.appendChild(list);
+
+    var open = true;
+    function setOpen(v){
+      open = v;
+      list.style.display = v ? '' : 'none';
+      toggle.textContent = v ? 'Hide' : 'Show';
+      toggle.setAttribute('aria-expanded', v ? 'true' : 'false');
+    }
+    toggle.onclick = function(){ setOpen(!open); };
+    function applyMode(narrow){
+      toggle.style.display = narrow ? '' : 'none';
+      setOpen(!narrow);
+    }
+    var mq = null;
+    try { mq = window.matchMedia && window.matchMedia('(max-width: 699.98px)'); } catch(e){}
+    applyMode(!!(mq && mq.matches));
+    if (mq){
+      var onMq = function(e){ applyMode(e.matches); };
+      if (mq.addEventListener) mq.addEventListener('change', onMq);
+      else if (mq.addListener) mq.addListener(onMq);
+    }
+
+    firstP.parentNode.insertBefore(box, firstP.nextSibling);
+  }
+
+  // ---- 5. External-link marker -------------------------------------------
+  function externalLinks(host){
+    var links = host.querySelectorAll('a[href]'), i;
+    for (i=0;i<links.length;i++){
+      var a = links[i];
+      if (a.getAttribute('data-gsf-ext')) continue;
+      if (a.closest && a.closest('#gsf-toc, #gsf-keep-reading, #gsf-callout')) continue; // injected UI handles itself
+      var href = a.getAttribute('href') || '';
+      if (!/^https?:\/\//i.test(href)) continue;
+      var ext = false;
+      try { ext = new URL(href, location.href).host !== location.host; } catch(e){}
+      if (!ext) continue;
+      a.setAttribute('data-gsf-ext','1');
+      if (a.target === '_blank'){
+        if (!a.title) a.title = 'opens in a new tab';
+        var rel = a.getAttribute('rel') || '';
+        if (!/\bnoopener\b/i.test(rel)) a.setAttribute('rel', (rel ? rel + ' ' : '') + 'noopener');
+      }
+      if (a.querySelector('img')) continue; // no marker on image links
+      var mark = el('span','font:600 .72em/1 "Public Sans",system-ui,sans-serif;vertical-align:super;margin-left:.18em;color:'+CFG.brand.slate+';');
+      mark.textContent = '↗︎'; // text-presentation north-east arrow, not an emoji
+      mark.setAttribute('aria-hidden','true');
+      a.appendChild(mark);
+    }
+  }
+
   // ---- boot --------------------------------------------------------------
   function run(){
     var slug = currentSlug();
@@ -754,9 +857,11 @@
     var host = contentEl();
     if (!host) return;
     try { graphics(slug, host); } catch(e){}
+    try { toc(host); } catch(e){}
     try { callout(slug, host); } catch(e){}
     try { faqPolish(host); } catch(e){}
     try { keepReading(slug, host); } catch(e){}
+    try { externalLinks(host); } catch(e){}
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
