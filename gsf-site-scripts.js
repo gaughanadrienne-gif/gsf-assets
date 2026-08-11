@@ -561,7 +561,7 @@
         "title": "How to prepare for the captain promotion",
         "items": [
           {
-            "h": "Start the Company Officer coursework early",
+            "h": "Start the Fire Officer 2 (formerly Company Officer) coursework early",
             "d": "The OSFM certification takes real time, so begin the course series well before you are eligible."
           },
           {
