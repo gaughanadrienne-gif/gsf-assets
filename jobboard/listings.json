@@ -1,0 +1,378 @@
+{
+  "meta": {
+    "generated": "2026-08-13T16:11:23",
+    "count": 41,
+    "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
+  },
+  "listings": [
+    {
+      "department": "Mountain View Fire Department",
+      "title": "Firefighter EMT/ Firefighter Paramedic (Lateral)",
+      "region": "Bay Area",
+      "open_date": "2026-08-07",
+      "close_date": "2026-08-28",
+      "source_url": "https://www.governmentjobs.com/careers/mountainview/jobs/5430836",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Visalia Fire Department",
+      "title": "FIREFIGHTER PARAMEDIC",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-08-12",
+      "close_date": "2026-09-02",
+      "source_url": "https://www.governmentjobs.com/careers/visalia/jobs/5445444",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Los Angeles County Fire Department",
+      "title": "CALL FIRE FIGHTER, NON-COMPETITIVE (AS NEEDED)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2025-06-03",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/lacounty/jobs/4830530",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Anaheim Fire & Rescue",
+      "title": "Fire Cadet",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-07-28",
+      "close_date": "2026-08-18",
+      "source_url": "https://www.governmentjobs.com/careers/anaheim/jobs/5427306",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Torrance Fire Department",
+      "title": "FIREFIGHTER (FIRE RECRUIT)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-07-27",
+      "close_date": "2026-08-24",
+      "source_url": "https://www.governmentjobs.com/careers/torranceca/jobs/5421626",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montebello Fire Department",
+      "title": "FIREFIGHTER/PARAMEDIC",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-08-12",
+      "close_date": "2026-08-26",
+      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5428534",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Costa Mesa Fire & Rescue",
+      "title": "Firefighter Paramedic",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-07-31",
+      "close_date": "2026-08-29",
+      "source_url": "https://www.governmentjobs.com/careers/costamesa/jobs/5394165",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Fullerton Fire Department",
+      "title": "Fire Cadet",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-08-03",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/fullerton/jobs/5430126",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Huntington Beach Fire Department",
+      "title": "FIREFIGHTER PARAMEDIC",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-07-30",
+      "close_date": "2026-08-14",
+      "source_url": "https://www.governmentjobs.com/careers/huntingtonbeach/jobs/5423082",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "El Segundo Fire Department",
+      "title": "Fire Paramedic",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2025-07-10",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/elsegundo/jobs/5002369",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Watsonville Fire Department",
+      "title": "Firefighter (Paramedic) -Entry Level/Lateral",
+      "region": "Central Coast",
+      "open_date": "2023-09-15",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/Watsonville/jobs/4207058",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Oceanside Fire Department",
+      "title": "Firefighter Paramedic Recruit",
+      "region": "San Diego",
+      "open_date": "2026-05-01",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/oceansideca/jobs/5329377",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Santee Fire Department",
+      "title": "Firefighter Paramedic",
+      "region": "San Diego",
+      "open_date": "2024-11-27",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/santee/jobs/4744205",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "San Bernardino County Fire",
+      "title": "Firefighter - Paramedic (Fire District)",
+      "region": "Inland Empire",
+      "open_date": "2026-03-07",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/sanbernardino/jobs/5257223",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Rialto Fire Department",
+      "title": "Firefighter/Paramedic",
+      "region": "Inland Empire",
+      "open_date": "2026-08-07",
+      "close_date": "2026-08-28",
+      "source_url": "https://www.governmentjobs.com/careers/rialto/jobs/5441627",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "El Centro Fire Department",
+      "title": "Firefighter",
+      "region": "Imperial Valley",
+      "open_date": "2026-01-01",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/elcentro/jobs/5183105",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Hayward Fire Department",
+      "title": "Firefighter Trainee",
+      "region": "Bay Area",
+      "open_date": "2026-07-31",
+      "close_date": "2026-08-31",
+      "source_url": "https://www.governmentjobs.com/careers/haywardca/jobs/5431767",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Hayward Fire Department",
+      "title": "Firefighter (56 HR) (Lateral)",
+      "region": "Bay Area",
+      "open_date": "2026-07-31",
+      "close_date": "2026-08-31",
+      "source_url": "https://www.governmentjobs.com/careers/haywardca/jobs/5413276",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Menlo Park Fire Protection District",
+      "title": "Fire Cadet",
+      "region": "Bay Area",
+      "open_date": "2026-08-01",
+      "close_date": "2026-09-15",
+      "source_url": "https://www.governmentjobs.com/careers/menlofire/jobs/5431248",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Ross Valley Fire Department",
+      "title": "Firefighter / Paramedic",
+      "region": "Bay Area",
+      "open_date": "2026-08-03",
+      "close_date": "2026-08-28",
+      "source_url": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Vacaville Fire Department",
+      "title": "Firefighter/Paramedic II - Lateral",
+      "region": "Bay Area",
+      "open_date": "2026-07-30",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/vacaville/jobs/5414695",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Hollister Fire Department",
+      "title": "Firefighter/EMT (Lateral)",
+      "region": "Central Coast",
+      "open_date": "2026-07-22",
+      "close_date": "2026-08-30",
+      "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420595",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Hollister Fire Department",
+      "title": "Firefighter/EMT (Entry Level)",
+      "region": "Central Coast",
+      "open_date": "2026-07-22",
+      "close_date": "2026-09-30",
+      "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Watsonville Fire Department",
+      "title": "Firefighter (Paramedic) -Entry Level/Lateral",
+      "region": "Central Coast",
+      "open_date": "2023-09-15",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/Watsonville/jobs/4207058",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Apple Valley Fire Protection District",
+      "title": "Firefighter/Paramedic",
+      "region": "Inland Empire",
+      "open_date": "2026-07-16",
+      "close_date": "2026-08-28",
+      "source_url": "https://www.governmentjobs.com/careers/avfpd/jobs/5412159",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Barstow Fire Protection District",
+      "title": "Fire Engineer",
+      "region": "Inland Empire",
+      "open_date": "2026-08-04",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5415454",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Barstow Fire Protection District",
+      "title": "Firefighter Paramedic",
+      "region": "Inland Empire",
+      "open_date": "2026-06-02",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/barstowca/jobs/5210932",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Cathedral City Fire Department",
+      "title": "FIRE ENGINEER",
+      "region": "Inland Empire",
+      "open_date": "2026-08-11",
+      "close_date": "2026-09-03",
+      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5444183",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Cathedral City Fire Department",
+      "title": "FIREFIGHTER/PARAMEDIC",
+      "region": "Inland Empire",
+      "open_date": "2026-05-11",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cathedralcityca/jobs/5338561",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montclair Fire Department",
+      "title": "Fire Engineer",
+      "region": "Inland Empire",
+      "open_date": "2026-05-19",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/5349138",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montclair Fire Department",
+      "title": "Firefighter (Paramedic) - Entry Level",
+      "region": "Inland Empire",
+      "open_date": "2023-04-25",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940420",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Montclair Fire Department",
+      "title": "Firefighter (Paramedic) - Lateral",
+      "region": "Inland Empire",
+      "open_date": "2023-04-25",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/cityofmontclair/jobs/3940529",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Newport Beach Fire Department",
+      "title": "FIREFIGHTER PARAMEDIC",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-05-08",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/newportbeach/jobs/5319450",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Santa Fe Springs Fire Department",
+      "title": "AUXILIARY FIREFIGHTER (VOLUNTEER/NON-PAID)",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-08-01",
+      "close_date": "2026-08-31",
+      "source_url": "https://www.governmentjobs.com/careers/santafesprings/jobs/5431968",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Coalinga Fire Department",
+      "title": "Firefighter/Paramedic",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-02-25",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/coalinga/jobs/4793805",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Lindsay Fire Department",
+      "title": "Volunteer Firefighter",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-07-29",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/lindsayca/jobs/5430171",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Rocklin Fire Department",
+      "title": "Firefighter/Paramedic (Non-Lateral)",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-07-08",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5406709",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Rocklin Fire Department",
+      "title": "Firefighter/Paramedic (Lateral)",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-07-08",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Sutter County Fire Department",
+      "title": "VOLUNTEER FIREFIGHTER",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2023-09-14",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/SutterCounty/jobs/4171612",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Tulare Fire Department",
+      "title": "Firefighter/Paramedic",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2022-09-27",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/tulareca/jobs/3739748",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Imperial County Fire Department",
+      "title": "Reserve Firefighter",
+      "region": "San Diego",
+      "open_date": "2026-04-02",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/imperialcounty/jobs/5295354",
+      "source": "governmentjobs"
+    }
+  ]
+}
