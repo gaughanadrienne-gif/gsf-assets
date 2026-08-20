@@ -3,15 +3,13 @@
    --------------------------------------------------------------------------
    The GSF equivalent of Ambitious Harvest's ah-site-scripts.js.
 
-   HOSTING: GSF does not yet have a public assets repo. To deploy:
-     1. Create a public GitHub repo (e.g. gsf-assets) and push this file.
-     2. Add to Squarespace  ->  Settings  ->  Advanced  ->  Code Injection -> HEADER:
-        <script defer src="https://cdn.jsdelivr.net/gh/USERNAME/gsf-assets@main/gsf-site-scripts.js"></script>
-     3. On edits: git push, then purge:
-        curl -s "https://purge.jsdelivr.net/gh/USERNAME/gsf-assets@main/gsf-site-scripts.js"
-   (Until a repo exists this file can also be pasted inline inside a <script> tag
-   in the header injection; external hosting is preferred so edits do not require
-   touching Squarespace.)
+   HOSTING: live sitewide from the public gsf-assets repo. To deploy an edit:
+     1. Copy this file into the gsf-assets clone at the GSF folder root.
+     2. Commit that ONE file (public repo, never git add -A) and push.
+     3. Purge once:
+        curl -s "https://purge.jsdelivr.net/gh/gaughanadrienne-gif/gsf-assets@main/gsf-site-scripts.js"
+   Loader already in the Squarespace header:
+        https://cdn.jsdelivr.net/gh/gaughanadrienne-gif/gsf-assets@main/gsf-site-scripts.js
 
    Modules (article-only, idempotent):
      1. Keep Reading  - related-article cards from the embedded manifest
@@ -865,4 +863,206 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
+})();
+
+/* ==========================================================================
+   GSF ANALYTICS EVENT LAYER  (added 2026-08-19)
+   --------------------------------------------------------------------------
+   Fires the GSF core conversion events as GA4 gtag events. This module is a
+   deliberate NO-OP until a GA4 tag is present on the page: every send goes
+   through send(), which returns immediately unless window.gtag is a function.
+   Installing the measurement ID in Squarespace (Settings > Developer Tools >
+   External API Keys, the "Google Analytics account number" field) is what
+   switches it on. Never install the tag through Code Injection via API.
+
+   Event contract is documented in Admin & Brand/analytics-event-dictionary.md.
+   Keep the two in sync. This IIFE is separate from the article layer above
+   because that one returns early on non-article pages; this one runs sitewide.
+   ========================================================================== */
+(function () {
+  'use strict';
+
+  var TOOLS = {
+    gsfcalc: 'cost_calculator',
+    gsfdrill: 'oral_board_drill',
+    gsfq: 'where_am_i',
+    gsfd: 'department_directory',
+    gsf457: '457b_maximizer',
+    gsffee: 'fee_drag',
+    gsfpens: 'pension_estimator',
+    gsfqot: 'qualified_ot_estimator',
+    gsfs: 'competitiveness_scorecard',
+    gsftd: 'testing_decoder'
+  };
+
+  var fired = {};
+
+  function send(name, params) {
+    if (typeof window.gtag !== 'function') return false;   // dormant until GA4 ships
+    try { window.gtag('event', name, params || {}); } catch (e) { return false; }
+    return true;
+  }
+
+  function once(key, name, params) {
+    if (fired[key]) return;
+    fired[key] = true;
+    send(name, params);
+  }
+
+  function path() { return (location.pathname || '').replace(/\/+$/, '') || '/'; }
+
+  function isRoadmapPage() { return /^\/free-roadmap$/i.test(path()); }
+  function isJobsPage() { return /^\/jobs$/i.test(path()); }
+  function isDirectoryPage() { return /^\/department-directory$/i.test(path()); }
+
+  function toolRootOf(node) {
+    if (!node || !node.closest) return null;
+    for (var id in TOOLS) {
+      if (Object.prototype.hasOwnProperty.call(TOOLS, id) && node.closest('#' + id)) {
+        return { id: id, name: TOOLS[id] };
+      }
+    }
+    return null;
+  }
+
+  function isVisible(el) {
+    if (!el) return false;
+    if (el.offsetParent === null && getComputedStyle(el).position !== 'fixed') return false;
+    return (el.textContent || '').trim().length > 0;
+  }
+
+  // ---- 1. roadmap_view ----------------------------------------------------
+  function roadmapView() {
+    if (!isRoadmapPage()) return;
+    once('roadmap_view', 'roadmap_view', { page_path: path() });
+  }
+
+  // ---- 2 and 3. roadmap_submit plus newsletter_signup ---------------------
+  // The MailerLite universal embed posts its own form. One delegated submit
+  // listener covers every embed on the site; the page decides which event.
+  function formSubmits() {
+    document.addEventListener('submit', function (e) {
+      var form = e.target;
+      if (!form || form.nodeName !== 'FORM') return;
+      var wrap = form.closest && form.closest('.ml-embedded, .ml-form-embedContainer, [data-form]');
+      var hasEmail = form.querySelector && form.querySelector('input[type="email"]');
+      if (!wrap && !hasEmail) return;
+      var holder = form.closest && form.closest('[data-form]');
+      var formId = (holder && holder.getAttribute('data-form')) || 'unknown';
+      if (isRoadmapPage()) {
+        once('roadmap_submit', 'roadmap_submit', { form_id: formId, page_path: path() });
+      } else {
+        once('newsletter_signup_' + formId, 'newsletter_signup', {
+          form_id: formId,
+          page_path: path(),
+          list_context: isJobsPage() ? 'jobs_alert' : 'general'
+        });
+      }
+    }, true);
+  }
+
+  // ---- 4. tool_start ------------------------------------------------------
+  function toolStart() {
+    function handler(e) {
+      var t = toolRootOf(e.target);
+      if (!t) return;
+      once('tool_start_' + t.id, 'tool_start', {
+        tool_id: t.id, tool_name: t.name, page_path: path()
+      });
+    }
+    document.addEventListener('click', handler, true);
+    document.addEventListener('change', handler, true);
+    document.addEventListener('input', handler, true);
+  }
+
+  // ---- 5. tool_complete ---------------------------------------------------
+  // Two signals: the calculator tools all use an id ending in "-go" for the
+  // action button and "-res" for the result panel. The quiz-style tools have
+  // neither, so a MutationObserver on the tool root catches a result panel
+  // that becomes visible and non-empty.
+  function toolComplete() {
+    document.addEventListener('click', function (e) {
+      var el = e.target && e.target.closest && e.target.closest('[id$="-go"]');
+      if (!el) return;
+      var t = toolRootOf(el);
+      if (!t) return;
+      once('tool_complete_' + t.id, 'tool_complete', {
+        tool_id: t.id, tool_name: t.name, page_path: path(), signal: 'action_button'
+      });
+    }, true);
+
+    if (typeof MutationObserver !== 'function') return;
+    Object.keys(TOOLS).forEach(function (id) {
+      var root = document.getElementById(id);
+      if (!root) return;
+      var obs = new MutationObserver(function () {
+        var panels = root.querySelectorAll('[id*="res"], [class*="result"]');
+        for (var i = 0; i < panels.length; i++) {
+          if (isVisible(panels[i])) {
+            once('tool_complete_' + id, 'tool_complete', {
+              tool_id: id, tool_name: TOOLS[id], page_path: path(), signal: 'result_panel'
+            });
+            obs.disconnect();
+            return;
+          }
+        }
+      });
+      obs.observe(root, { childList: true, subtree: true, attributes: true, characterData: true });
+    });
+  }
+
+  // ---- 6, 7, 8. job_outbound, directory_outbound, download ----------------
+  function outboundAndDownload() {
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!href || href.charAt(0) === '#') return;
+
+      var url;
+      try { url = new URL(href, location.href); } catch (err) { return; }
+
+      // download: any PDF, on our host or elsewhere
+      if (/\.pdf(\?|$)/i.test(url.pathname + url.search)) {
+        send('download', {
+          file_name: url.pathname.split('/').pop(),
+          file_url: url.href,
+          page_path: path()
+        });
+        return;
+      }
+
+      if (url.host === location.host) return;               // internal, not an exit
+
+      var inDirectory = !!a.closest('#gsfd') || isDirectoryPage();
+      var inJobs = isJobsPage() || !!a.closest('#gsfj, [data-gsf-jobs], #gsf-jobs');
+
+      if (inJobs && !a.closest('#gsfd')) {
+        send('job_outbound', {
+          link_url: url.href, link_domain: url.host,
+          link_text: (a.textContent || '').trim().slice(0, 100), page_path: path()
+        });
+      } else if (inDirectory) {
+        send('directory_outbound', {
+          link_url: url.href, link_domain: url.host,
+          link_text: (a.textContent || '').trim().slice(0, 100), page_path: path()
+        });
+      }
+    }, true);
+  }
+
+  // NOTE: purchase is intentionally NOT implemented here. GSF sells nothing
+  // yet, and when it does, Squarespace Commerce emits purchase through the
+  // native GA4 integration. Hand-firing it here would double-count. The
+  // required parameter shape is recorded in the event dictionary.
+
+  function boot() {
+    try { roadmapView(); } catch (e) {}
+    try { formSubmits(); } catch (e) {}
+    try { toolStart(); } catch (e) {}
+    try { toolComplete(); } catch (e) {}
+    try { outboundAndDownload(); } catch (e) {}
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 })();
