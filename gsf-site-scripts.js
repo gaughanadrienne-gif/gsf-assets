@@ -980,6 +980,14 @@
   // action button and "-res" for the result panel. The quiz-style tools have
   // neither, so a MutationObserver on the tool root catches a result panel
   // that becomes visible and non-empty.
+  // Result panels on the quiz-style tools carry classes like "res-tag" and
+  // "res-step" rather than an id containing "res", so an id-only selector never
+  // matched them. The selector below matches those, and deliberately does NOT
+  // match a reset control (id "gsfd-reset" contains "res" but does not end
+  // "-res", and the class "reset" does not contain "res-").
+  var RESULT_SEL = '[id$="-res"], [id$="-result"], [id$="-results"], ' +
+                   '[class*="res-"], [class*="result-"], [class$="-result"], [class$="-results"]';
+
   function toolComplete() {
     document.addEventListener('click', function (e) {
       var el = e.target && e.target.closest && e.target.closest('[id$="-go"]');
@@ -995,9 +1003,13 @@
     Object.keys(TOOLS).forEach(function (id) {
       var root = document.getElementById(id);
       if (!root) return;
+      // Anything already matching at boot is not a completion signal.
+      var initial = root.querySelectorAll(RESULT_SEL);
+      for (var k = 0; k < initial.length; k++) { initial[k].__gsfInitial = true; }
       var obs = new MutationObserver(function () {
-        var panels = root.querySelectorAll('[id*="res"], [class*="result"]');
+        var panels = root.querySelectorAll(RESULT_SEL);
         for (var i = 0; i < panels.length; i++) {
+          if (panels[i].__gsfInitial) continue;   // present before any interaction
           if (isVisible(panels[i])) {
             once('tool_complete_' + id, 'tool_complete', {
               tool_id: id, tool_name: TOOLS[id], page_path: path(), signal: 'result_panel'
@@ -1032,6 +1044,9 @@
         return;
       }
 
+      // tel: and mailto: are not site exits and carry no host, so counting them
+      // as outbound clicks inflates the department-exit number with phone taps.
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
       if (url.host === location.host) return;               // internal, not an exit
 
       var inDirectory = !!a.closest('#gsfd') || isDirectoryPage();
