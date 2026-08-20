@@ -988,11 +988,24 @@
   var RESULT_SEL = '[id$="-res"], [id$="-result"], [id$="-results"], ' +
                    '[class*="res-"], [class*="result-"], [class$="-result"], [class$="-results"]';
 
+  // Tools with neither an action button nor a result panel need their completion
+  // named explicitly. The oral board drill is the case: reading the model answer
+  // or the tips IS the payoff, and nothing on the page ends in "-go" or "res-".
+  var COMPLETE_CLICK = {
+    gsfdrill: '#gsfdrill-reveal, #gsfdrill-exbtn'
+  };
+
   function toolComplete() {
     document.addEventListener('click', function (e) {
-      var el = e.target && e.target.closest && e.target.closest('[id$="-go"]');
-      if (!el) return;
-      var t = toolRootOf(el);
+      if (!e.target || !e.target.closest) return;
+      var el = e.target.closest('[id$="-go"]');
+      var t = el ? toolRootOf(el) : null;
+      if (!t) {
+        for (var id in COMPLETE_CLICK) {
+          if (!Object.prototype.hasOwnProperty.call(COMPLETE_CLICK, id)) continue;
+          if (e.target.closest(COMPLETE_CLICK[id])) { t = { id: id, name: TOOLS[id] }; break; }
+        }
+      }
       if (!t) return;
       once('tool_complete_' + t.id, 'tool_complete', {
         tool_id: t.id, tool_name: t.name, page_path: path(), signal: 'action_button'
