@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-08-21T05:38:39",
-    "count": 41,
+    "generated": "2026-08-22T05:38:49",
+    "count": 43,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -78,6 +78,15 @@
       "source": "governmentjobs"
     },
     {
+      "department": "Santa Barbara City Fire Department",
+      "title": "Firefighter - Entry",
+      "region": "Central Coast",
+      "open_date": "2026-08-17",
+      "close_date": "2026-09-21",
+      "source_url": "https://www.governmentjobs.com/careers/santabarbara/jobs/5445639",
+      "source": "governmentjobs"
+    },
+    {
       "department": "Watsonville Fire Department",
       "title": "Firefighter (Paramedic) -Entry Level/Lateral",
       "region": "Central Coast",
@@ -102,6 +111,15 @@
       "open_date": "2026-05-01",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/oceansideca/jobs/5329377",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Santee Fire Department",
+      "title": "Firefighter Paramedic",
+      "region": "San Diego",
+      "open_date": "2024-11-27",
+      "close_date": null,
+      "source_url": "https://www.governmentjobs.com/careers/santee/jobs/4744205",
       "source": "governmentjobs"
     },
     {
