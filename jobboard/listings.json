@@ -1,19 +1,10 @@
 {
   "meta": {
-    "generated": "2026-08-28T05:38:17",
-    "count": 48,
+    "generated": "2026-08-29T05:38:20",
+    "count": 43,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
-    {
-      "department": "Mountain View Fire Department",
-      "title": "Firefighter EMT/ Firefighter Paramedic (Lateral)",
-      "region": "Bay Area",
-      "open_date": "2026-08-07",
-      "close_date": "2026-08-28",
-      "source_url": "https://www.governmentjobs.com/careers/mountainview/jobs/5430836",
-      "source": "governmentjobs"
-    },
     {
       "department": "Visalia Fire Department",
       "title": "FIREFIGHTER PARAMEDIC",
@@ -39,15 +30,6 @@
       "open_date": "2026-08-27",
       "close_date": "2026-11-22",
       "source_url": "https://www.governmentjobs.com/careers/monrovia/jobs/5464473",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Montebello Fire Department",
-      "title": "FIREFIGHTER/PARAMEDIC",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-08-12",
-      "close_date": "2026-08-28",
-      "source_url": "https://www.governmentjobs.com/careers/montebello/jobs/5428534",
       "source": "governmentjobs"
     },
     {
@@ -132,15 +114,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Rialto Fire Department",
-      "title": "Firefighter/Paramedic",
-      "region": "Inland Empire",
-      "open_date": "2026-08-07",
-      "close_date": "2026-08-28",
-      "source_url": "https://www.governmentjobs.com/careers/rialto/jobs/5441627",
-      "source": "governmentjobs"
-    },
-    {
       "department": "El Centro Fire Department",
       "title": "Firefighter",
       "region": "Imperial Valley",
@@ -195,15 +168,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Ross Valley Fire Department",
-      "title": "Firefighter / Paramedic",
-      "region": "Bay Area",
-      "open_date": "2026-08-03",
-      "close_date": "2026-08-28",
-      "source_url": "https://www.governmentjobs.com/careers/townofsananselmo/jobs/5429933",
-      "source": "governmentjobs"
-    },
-    {
       "department": "Vacaville Fire Department",
       "title": "Firefighter/Paramedic II - Lateral",
       "region": "Bay Area",
@@ -237,15 +201,6 @@
       "open_date": "2023-09-15",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/Watsonville/jobs/4207058",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Apple Valley Fire Protection District",
-      "title": "Firefighter/Paramedic",
-      "region": "Inland Empire",
-      "open_date": "2026-07-16",
-      "close_date": "2026-08-28",
-      "source_url": "https://www.governmentjobs.com/careers/avfpd/jobs/5412159",
       "source": "governmentjobs"
     },
     {
