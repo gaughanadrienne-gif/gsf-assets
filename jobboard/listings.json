@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-08-30T05:38:38",
+    "generated": "2026-08-31T05:37:52",
     "count": 40,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
@@ -114,6 +114,24 @@
       "source": "governmentjobs"
     },
     {
+      "department": "Hayward Fire Department",
+      "title": "Firefighter (56 HR) (Lateral)",
+      "region": "Bay Area",
+      "open_date": "2026-07-31",
+      "close_date": "2026-08-31",
+      "source_url": "https://www.governmentjobs.com/careers/haywardca/jobs/5413276",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Hayward Fire Department",
+      "title": "Firefighter Trainee",
+      "region": "Bay Area",
+      "open_date": "2026-07-31",
+      "close_date": "2026-08-31",
+      "source_url": "https://www.governmentjobs.com/careers/haywardca/jobs/5431767",
+      "source": "governmentjobs"
+    },
+    {
       "department": "Livermore- Pleasanton Fire Department",
       "title": "Firefighter-EMT",
       "region": "Bay Area",
@@ -156,15 +174,6 @@
       "open_date": "2026-07-22",
       "close_date": "2026-09-30",
       "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420493",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Hollister Fire Department",
-      "title": "Firefighter/EMT (Lateral)",
-      "region": "Central Coast",
-      "open_date": "2026-07-22",
-      "close_date": "2026-08-30",
-      "source_url": "https://www.governmentjobs.com/careers/hollisterca/jobs/5420595",
       "source": "governmentjobs"
     },
     {
@@ -240,6 +249,15 @@
       "source": "governmentjobs"
     },
     {
+      "department": "La Verne Fire Department",
+      "title": "Firefighter",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-08-31",
+      "close_date": "2026-09-14",
+      "source_url": "https://www.governmentjobs.com/careers/cityoflaverne/jobs/5463481",
+      "source": "governmentjobs"
+    },
+    {
       "department": "Newport Beach Fire Department",
       "title": "FIREFIGHTER PARAMEDIC",
       "region": "Los Angeles/SoCal",
@@ -309,24 +327,6 @@
       "open_date": "2026-08-28",
       "close_date": "2026-09-18",
       "source_url": "https://www.governmentjobs.com/careers/southplacerfire/jobs/5461676",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Sutter County Fire Department",
-      "title": "FIREFIGHTER - LIMITED TERM",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-08-26",
-      "close_date": "2026-08-30",
-      "source_url": "https://www.governmentjobs.com/careers/SutterCounty/jobs/5403558",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Sutter County Fire Department",
-      "title": "FIREFIGHTER - EXTRA HELP",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-08-26",
-      "close_date": "2026-08-30",
-      "source_url": "https://www.governmentjobs.com/careers/SutterCounty/jobs/5461541",
       "source": "governmentjobs"
     },
     {
