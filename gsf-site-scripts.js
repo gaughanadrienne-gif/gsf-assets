@@ -7,9 +7,9 @@
      1. Copy this file into the gsf-assets clone at the GSF folder root.
      2. Commit that ONE file (public repo, never git add -A) and push.
      3. Purge once:
-        curl -s "https://purge.jsdelivr.net/gh/gaughanadrienne-gif/gsf-assets@main/gsf-site-scripts.js"
+        curl -s "https://purge.jsdelivr.net/gh/goldenstatefirefighter/gsf-assets@main/gsf-site-scripts.js"
    Loader already in the Squarespace header:
-        https://cdn.jsdelivr.net/gh/gaughanadrienne-gif/gsf-assets@main/gsf-site-scripts.js
+        https://cdn.jsdelivr.net/gh/goldenstatefirefighter/gsf-assets@main/gsf-site-scripts.js
 
    Modules (article-only, idempotent):
      1. Keep Reading  - related-article cards from the embedded manifest
