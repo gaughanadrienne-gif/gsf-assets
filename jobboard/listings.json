@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-08-31T05:37:52",
-    "count": 40,
+    "generated": "2026-09-01T05:38:30",
+    "count": 38,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -114,21 +114,12 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Hayward Fire Department",
-      "title": "Firefighter (56 HR) (Lateral)",
+      "department": "City of Napa Fire Department",
+      "title": "Firefighter/Paramedic",
       "region": "Bay Area",
-      "open_date": "2026-07-31",
-      "close_date": "2026-08-31",
-      "source_url": "https://www.governmentjobs.com/careers/haywardca/jobs/5413276",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Hayward Fire Department",
-      "title": "Firefighter Trainee",
-      "region": "Bay Area",
-      "open_date": "2026-07-31",
-      "close_date": "2026-08-31",
-      "source_url": "https://www.governmentjobs.com/careers/haywardca/jobs/5431767",
+      "open_date": "2026-08-31",
+      "close_date": "2026-09-14",
+      "source_url": "https://www.governmentjobs.com/careers/napacity/jobs/5402506",
       "source": "governmentjobs"
     },
     {
@@ -249,15 +240,6 @@
       "source": "governmentjobs"
     },
     {
-      "department": "La Verne Fire Department",
-      "title": "Firefighter",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-08-31",
-      "close_date": "2026-09-14",
-      "source_url": "https://www.governmentjobs.com/careers/cityoflaverne/jobs/5463481",
-      "source": "governmentjobs"
-    },
-    {
       "department": "Newport Beach Fire Department",
       "title": "FIREFIGHTER PARAMEDIC",
       "region": "Los Angeles/SoCal",
@@ -267,12 +249,12 @@
       "source": "governmentjobs"
     },
     {
-      "department": "Santa Fe Springs Fire Department",
-      "title": "AUXILIARY FIREFIGHTER (VOLUNTEER/NON-PAID)",
-      "region": "Los Angeles/SoCal",
-      "open_date": "2026-08-01",
-      "close_date": "2026-08-31",
-      "source_url": "https://www.governmentjobs.com/careers/santafesprings/jobs/5431968",
+      "department": "City of Merced Fire Department",
+      "title": "Fire Captain I/II",
+      "region": "Sacramento/Central Valley",
+      "open_date": "2026-08-31",
+      "close_date": "2026-09-14",
+      "source_url": "https://www.governmentjobs.com/careers/mercedca/jobs/5467600",
       "source": "governmentjobs"
     },
     {
