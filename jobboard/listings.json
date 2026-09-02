@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-01T05:38:30",
+    "generated": "2026-09-02T05:38:14",
     "count": 38,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
@@ -168,6 +168,15 @@
       "source": "governmentjobs"
     },
     {
+      "department": "San Luis Obispo City Fire Department",
+      "title": "Firefighter",
+      "region": "Central Coast",
+      "open_date": "2026-09-01",
+      "close_date": "2026-09-25",
+      "source_url": "https://www.governmentjobs.com/careers/slobispo/jobs/5441542",
+      "source": "governmentjobs"
+    },
+    {
       "department": "Watsonville Fire Department",
       "title": "Firefighter (Paramedic) -Entry Level/Lateral",
       "region": "Central Coast",
@@ -246,15 +255,6 @@
       "open_date": "2026-05-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/newportbeach/jobs/5319450",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "City of Merced Fire Department",
-      "title": "Fire Captain I/II",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-08-31",
-      "close_date": "2026-09-14",
-      "source_url": "https://www.governmentjobs.com/careers/mercedca/jobs/5467600",
       "source": "governmentjobs"
     },
     {
