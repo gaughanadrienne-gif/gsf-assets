@@ -1,19 +1,10 @@
 {
   "meta": {
-    "generated": "2026-09-02T05:38:14",
+    "generated": "2026-09-03T05:37:30",
     "count": 38,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
-    {
-      "department": "Visalia Fire Department",
-      "title": "FIREFIGHTER PARAMEDIC",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-08-12",
-      "close_date": "2026-09-02",
-      "source_url": "https://www.governmentjobs.com/careers/visalia/jobs/5445444",
-      "source": "governmentjobs"
-    },
     {
       "department": "Los Angeles County Fire Department",
       "title": "CALL FIRE FIGHTER, NON-COMPETITIVE (AS NEEDED)",
@@ -255,6 +246,15 @@
       "open_date": "2026-05-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/newportbeach/jobs/5319450",
+      "source": "governmentjobs"
+    },
+    {
+      "department": "Orange County Fire Authority",
+      "title": "Fire Captain",
+      "region": "Los Angeles/SoCal",
+      "open_date": "2026-09-02",
+      "close_date": "2026-09-16",
+      "source_url": "https://www.governmentjobs.com/careers/ocfa/jobs/5469579",
       "source": "governmentjobs"
     },
     {
