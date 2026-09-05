@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-09-04T05:37:58",
-    "count": 38,
+    "generated": "2026-09-05T05:38:19",
+    "count": 37,
     "source_note": "Open California firefighter listings pulled from the NEOGOV/GovernmentJobs RSS feed. Verify every listing against the department before relying on it; postings and dates change."
   },
   "listings": [
@@ -291,15 +291,6 @@
       "open_date": "2026-07-08",
       "close_date": null,
       "source_url": "https://www.governmentjobs.com/careers/rocklinca/jobs/5403075",
-      "source": "governmentjobs"
-    },
-    {
-      "department": "Sacramento Metropolitan Fire Department",
-      "title": "Reserve Firefighter",
-      "region": "Sacramento/Central Valley",
-      "open_date": "2026-08-17",
-      "close_date": "2026-09-04",
-      "source_url": "https://www.governmentjobs.com/careers/smfd/jobs/5450923",
       "source": "governmentjobs"
     },
     {
